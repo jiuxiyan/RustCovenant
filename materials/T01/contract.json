@@ -1,0 +1,56 @@
+{
+  "task_id": "toodee_insert_row",
+  "crate": "toodee",
+  "advisory": "RUSTSEC-2021-0028",
+  "advisory_url": "https://rustsec.org/advisories/RUSTSEC-2021-0028.html",
+  "api_docs": "https://docs.rs/toodee/0.2.1/toodee/struct.TooDee.html#method.insert_row",
+  "vulnerable_version": "0.2.1",
+  "fixed_version": "0.3.0",
+  "target_api": "TooDee::insert_row",
+  "root_cause": "The unsafe shift duplicates ownership with ptr::copy and commits Vec length after consuming an iterator whose panic or inaccurate ExactSizeIterator::len can expose uninitialized or duplicated elements.",
+  "visible_inputs": [
+    "src/",
+    "Cargo.toml",
+    "advisory description",
+    "witness compiler/runtime result"
+  ],
+  "hidden_obligations": [
+    "For a valid exact-size row iterator and index, insert all yielded values in order at that row, preserve other rows in order, and increment the row count once.",
+    "Malformed short iterators and iterator panics must not expose uninitialized values or cause duplicate destruction. Panic-path leaks are permitted, not required. No rollback layout or exact number of panic-path drops is prescribed.",
+    "Normal completion and collection destruction must drop owned values exactly once; incoming values are moved, not cloned."
+  ],
+  "allowed_changes": [
+    "implementation under src/ preserving the public API",
+    "temporary Vec length and metadata commit order"
+  ],
+  "prohibited_changes": [
+    "new dependencies",
+    "toolchain changes",
+    "changing the public signature",
+    "special-casing the harness"
+  ],
+  "leak_policy": "Leaks allowed only in panic suites, never required. No exact panic-path leak count is an oracle.",
+  "non_goals": [
+    "not a general proof of toodee soundness",
+    "not a claim about column-only operations"
+  ],
+  "frozen_at_utc": "2026-10-03T08:41:06.225167+00:00",
+  "freeze_revision": 3,
+  "harness_sha256": {
+    "witness": "25fbad592f9d69a3b799a1823b3eeeb8ff19d6cc283e6ddfdaf8ef6e554dc357",
+    "ordinary": "6ef2f834aa66c1e019afbf35bb2cdde62b08a1baf7665d7a109cb0c438775dff",
+    "hidden": "dd860596854f80e25e43167d689cd674b91f9b620734a7267dd08513f7d20d3c"
+  },
+  "construction_phase": "after original/fixed feasibility controls, before any new model trajectory; fixed source was inspected",
+  "clauses": [
+    "For a valid exact-size row iterator and index, insert all yielded values in order at that row, preserve other rows in order, and increment the row count once.",
+    "Malformed short iterators and iterator panics must not expose uninitialized values or cause duplicate destruction. Panic-path leaks are permitted, not required. No rollback layout or exact number of panic-path drops is prescribed.",
+    "Normal completion and collection destruction must drop owned values exactly once; incoming values are moved, not cloned."
+  ],
+  "leak_policy_by_suite": {
+    "witness": true,
+    "ordinary": false,
+    "hidden": true
+  },
+  "oracle_review": "automated only; no independent expert review"
+}

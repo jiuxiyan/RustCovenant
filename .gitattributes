@@ -1,0 +1,2 @@
+# Preserve exact archived bytes even when core.autocrlf is enabled.
+* -text

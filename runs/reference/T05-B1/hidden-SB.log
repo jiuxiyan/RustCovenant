@@ -1,0 +1,53 @@
+
+thread 'main' panicked at /harness/hidden.rs:8:260:
+predicate
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+note: in Miri, you may have to set `MIRIFLAGS=-Zmiri-env-forward=RUST_BACKTRACE` for the environment variable to have an effect
+
+thread 'main' panicked at /harness/hidden.rs:8:260:
+predicate
+
+thread 'main' panicked at /harness/hidden.rs:8:260:
+predicate
+
+thread 'main' panicked at /harness/hidden.rs:5:149:
+injected destructor panic
+error: Undefined Behavior: out-of-bounds pointer use: alloc34941 has been freed, so this pointer is dangling
+ --> /toolchain/lib/rustlib/src/rust/library/core/src/slice/raw.rs:138:9
+  |
+  = note: out-of-bounds pointer use: alloc34941 has been freed, so this pointer is dangling
+  |
+  = help: this indicates a bug in the program: it performed an invalid operation, and caused Undefined Behavior
+  = help: see https://doc.rust-lang.org/nightly/reference/behavior-considered-undefined.html for further information
+help: alloc34941 was allocated here:
+ --> /harness/hidden.rs:6:148
+  |
+6 | ...et mut v=StackVec::new();for id in 0..n{v.push(T{id,heap:format!("item{id}"),d:d.clone(),bomb:b.clone()});}v}
+  |                                                             ^^^^^^^^^^^^^^^^^^^
+help: alloc34941 was deallocated here:
+ --> /harness/hidden.rs:8:224
+  |
+8 | ...AssertUnwindSafe(||v.retain(|x|{if mode==0&&x.id==bomb{panic!("predicate");}if mode==1{x.id!=bomb}else{x.id%2==0}})));assert!(r.is_err...
+  |                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  = note: BACKTRACE (of the first span):
+  = note: inside `std::slice::from_raw_parts::<'_, u8>` at /toolchain/lib/rustlib/src/rust/library/core/src/slice/raw.rs:138:9: 138:47
+  = note: inside `std::vec::Vec::<u8>::as_slice` at /toolchain/lib/rustlib/src/rust/library/alloc/src/vec/mod.rs:1587:18: 1587:64
+  = note: inside `<std::vec::Vec<u8> as std::ops::Deref>::deref` at /toolchain/lib/rustlib/src/rust/library/alloc/src/vec/mod.rs:3278:9: 3278:24
+  = note: inside `std::vec::partial_eq::<impl std::cmp::PartialEq for std::vec::Vec<u8>>::eq` at /toolchain/lib/rustlib/src/rust/library/alloc/src/vec/partial_eq.rs:15:54: 15:58
+  = note: inside `<std::string::String as std::cmp::PartialEq>::eq` at /toolchain/lib/rustlib/src/rust/library/alloc/src/string.rs:363:5: 363:17
+note: inside `check`
+ --> /harness/hidden.rs:7:104
+  |
+7 | ... mut seen=vec![false;8];for x in v.as_slice(){assert_eq!(x.heap,format!("item{}",x.id));assert!(!seen[x.id]);seen[x.id]=true;assert_eq...
+  |                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+note: inside `main`
+ --> /harness/hidden.rs:8:364
+  |
+8 | ...else{x.id%2==0}})));assert!(r.is_err());*b.borrow_mut()=None;check(&v,&d);drop(v);assert!(d.borrow().iter().all(|&x|x<=1));}}}}
+  |                                                                 ^^^^^^^^^^^^
+  = note: this error originates in the macro `format` which comes from the expansion of the macro `assert_eq` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+note: some details are omitted, run with `MIRIFLAGS=-Zmiri-backtrace=full` for a verbose backtrace
+
+error: aborting due to 1 previous error
+

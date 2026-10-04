@@ -1,0 +1,4 @@
+Frozen intent contract C0 (source-grounded, pre-candidate)
+- For distinct occupied keys return mutable references to those entries in input order; writing one must not change others.
+- Allocated capacity is not initialized entry length: never form an Entry reference at an uninitialized index. Return IndexOutOfBounds there, IndexVacant at a vacancy, and OverlappingIndices for duplicate keys.
+- Removal and reinsertion must preserve all unaffected values and ordinary exactly-once destruction.

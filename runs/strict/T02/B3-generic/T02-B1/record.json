@@ -1,0 +1,79 @@
+{
+  "scope": "Unsigned review derivative; original signed records are archived separately. No signature over this derivative is claimed.",
+  "original_evidence_sha256": "f5bb007ec85198139c43063ae4150ff34291f8401d2800f6be0740e93c7cd577",
+  "original_context_sha256": "bd17ac58d57be43e677cd0966b59d6b036e4896b703df63043b6c72c74018c59",
+  "context": {
+    "source": {
+      ".cargo_vcs_info.json": "05890c3c3f7180a1c10cefe6f94c97c70bc4321aa0ac7166d98d1d3ad8f0427a",
+      "CHANGELOG.md": "28d7b15394aa9234a0b7d88b4ae790d6973bb2086c5207df22678a28b901cec0",
+      "Cargo.toml": "d5b06a4085f733a5cc4d86513c5fda842c6ed1652b72a28b4f7df5ebb9d5909d",
+      "Cargo.toml.orig": "23aedcbef0b2493d6e4e2ab7aedee53d3cd66f98a6bda49ef7ea31bf181d4fb2",
+      "LICENSE": "8ce0830173fdac609dfb4ea603fdc002c2f4af0dc9b1a005653f5da9cf534b18",
+      "README.md": "6e8d6d493aec6526593ae9b05e3b21d3f878c5816a94af9d372598e03406b35f",
+      "src/builder.rs": "87e629b1f9853d910389635b27a42391f1681cd5638d81e386215211e8b67847",
+      "src/lib.rs": "a4e88fae1acc589ffec42d41212e0fe3e8c69416ce036551986f5515818ada2d",
+      "src/serde.rs": "e58650a04644cb732119f50eefe6a3066104b5b41be7074e12525e05e2ad21b7",
+      "tests/serde.rs": "bb28112509dbb6949528802d05a1b1e34d2e5ff9d3ba5f62aa801cfb3de7a78e",
+      "tests/slab.rs": "758d0a9e07bb8742ce46bb027bc0017aee37f19cb02940e4842cd9c95f34a6d1"
+    },
+    "harness": {
+      "hidden.rs": "374a9302b31b5929eaf4febea015b9a8d1dbe55cac8cdab8cd068fc988e26306"
+    },
+    "models": [
+      "SB",
+      "TB"
+    ],
+    "timeout_s": 120,
+    "rust_commit": "287487624357c19b22d27aa3ed584b8ccd080b4d",
+    "leak_policy_by_suite": {
+      "hidden": false
+    },
+    "contract_sha256": "1e626c09ab8d34998143a65986d045e8c01921d9d791580a9927d566df282908",
+    "miri_sha256": "f763a3b84abaa27db8cb0b4cdef8bec0daf1b0f1e72f9ae4dae63f84835acc57",
+    "bwrap_sha256": "85580dd52ed366ece8844e90fa75ac7c4de8802963071344e123221fb9f6f11e",
+    "evaluator_sha256": "895ccb55f247761e8afee9b33a7f0b32dfe3bfcb4d2c42f330db2bc0480ae455",
+    "metadata": {
+      "crate_name": "slab",
+      "edition": "2018",
+      "lib_path": "src/lib.rs",
+      "features": [
+        "default",
+        "std"
+      ],
+      "package": "slab",
+      "version": "0.4.10"
+    },
+    "sysroot_manifest_sha256": "4b42015c4e03e6aadfa96260c63190ea2916aa456833995aa59af0bd239bcb54"
+  },
+  "processes": {
+    "compile": {
+      "status": "PASS",
+      "returncode": 0,
+      "elapsed_s": 3.609,
+      "original_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "path_normalization_applied": false
+    },
+    "hidden-SB": {
+      "status": "PASS",
+      "returncode": 0,
+      "elapsed_s": 3.076,
+      "original_log_sha256": "a2a0b863a338aa67ad0f6b29c51d4e3d66e825fe2e7cc69ceac819ca8d7d16af",
+      "log_sha256": "a2a0b863a338aa67ad0f6b29c51d4e3d66e825fe2e7cc69ceac819ca8d7d16af",
+      "path_normalization_applied": false
+    },
+    "hidden-TB": {
+      "status": "PASS",
+      "returncode": 0,
+      "elapsed_s": 3.102,
+      "original_log_sha256": "a2a0b863a338aa67ad0f6b29c51d4e3d66e825fe2e7cc69ceac819ca8d7d16af",
+      "log_sha256": "a2a0b863a338aa67ad0f6b29c51d4e3d66e825fe2e7cc69ceac819ca8d7d16af",
+      "path_normalization_applied": false
+    }
+  },
+  "execution_flags": {
+    "complete": true,
+    "snapshot_unchanged": true,
+    "original_inputs_unchanged": true
+  }
+}

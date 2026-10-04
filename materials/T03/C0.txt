@@ -1,0 +1,4 @@
+Frozen intent contract C0 (source-grounded, pre-candidate)
+- Normal clear removes every element, runs its destructor once, retains capacity, sets num_elements and next_push_index to zero, and permits reuse.
+- A panicking destructor must not leave an already-dropped value reachable or available to be dropped again. After catching a panic, occupancy and num_elements must agree; a particular rollback or retained-suffix layout is not required.
+- Sparse stable indices survive unrelated removals. Panic-path leakage is allowed but not required; ordinary operation must not leak.

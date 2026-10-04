@@ -1,0 +1,4 @@
+Frozen intent contract C0 (source-grounded, pre-candidate)
+- For a valid exact-size row iterator and index, insert all yielded values in order at that row, preserve other rows in order, and increment the row count once.
+- Malformed short iterators and iterator panics must not expose uninitialized values or cause duplicate destruction. Panic-path leaks are permitted, not required. No rollback layout or exact number of panic-path drops is prescribed.
+- Normal completion and collection destruction must drop owned values exactly once; incoming values are moved, not cloned.

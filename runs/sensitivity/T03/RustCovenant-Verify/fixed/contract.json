@@ -1,0 +1,56 @@
+{
+  "task_id": "stable_vec_clear_panic",
+  "crate": "stable-vec",
+  "advisory": "RUSTSEC-2026-0267",
+  "advisory_url": "https://rustsec.org/advisories/RUSTSEC-2026-0267.html",
+  "api_docs": "https://docs.rs/stable-vec/0.4.2/stable_vec/struct.StableVecFacade.html#method.clear",
+  "vulnerable_version": "0.4.2",
+  "fixed_version": "0.4.3",
+  "target_api": "StableVec::clear",
+  "root_cause": "BitVecCore::clear drops elements before clearing occupancy bits and length; a Drop panic makes the outer Drop revisit occupied slots.",
+  "visible_inputs": [
+    "src/",
+    "Cargo.toml",
+    "advisory description",
+    "witness compiler/runtime result"
+  ],
+  "hidden_obligations": [
+    "Normal clear removes every element, runs its destructor once, retains capacity, sets num_elements and next_push_index to zero, and permits reuse.",
+    "A panicking destructor must not leave an already-dropped value reachable or available to be dropped again. After catching a panic, occupancy and num_elements must agree; a particular rollback or retained-suffix layout is not required.",
+    "Sparse stable indices survive unrelated removals. Panic-path leakage is allowed but not required; ordinary operation must not leak."
+  ],
+  "allowed_changes": [
+    "implementation under src/ preserving the public API",
+    "panic-drop guard and metadata commit order"
+  ],
+  "prohibited_changes": [
+    "new dependencies",
+    "toolchain changes",
+    "changing the public signature",
+    "special-casing the harness"
+  ],
+  "non_goals": [
+    "not a general proof of stable-vec soundness",
+    "not a claim about unrelated iterator code"
+  ],
+  "frozen_at_utc": "2026-10-03T08:41:06.225167+00:00",
+  "freeze_revision": 3,
+  "harness_sha256": {
+    "witness": "72dc7bb9820893e4c693f945454776fd5b13331e5b80be1c2068553ec6ffeb7c",
+    "ordinary": "7608f01ed5a2ed8c06a14e994667d102446d374a99b763a125e6a45a176992e8",
+    "hidden": "064f22e8b61c2264223ee0e8ec04012e5103471d3f58888164213021d71ab6d3"
+  },
+  "construction_phase": "after original/fixed feasibility controls, before any new model trajectory; fixed source was inspected",
+  "clauses": [
+    "Normal clear removes every element, runs its destructor once, retains capacity, sets num_elements and next_push_index to zero, and permits reuse.",
+    "A panicking destructor must not leave an already-dropped value reachable or available to be dropped again. After catching a panic, occupancy and num_elements must agree; a particular rollback or retained-suffix layout is not required.",
+    "Sparse stable indices survive unrelated removals. Panic-path leakage is allowed but not required; ordinary operation must not leak."
+  ],
+  "leak_policy_by_suite": {
+    "witness": true,
+    "ordinary": false,
+    "hidden": true
+  },
+  "leak_policy": "Leaks allowed only in panic suites, never required. No exact panic-path leak count is an oracle.",
+  "oracle_review": "automated only; no independent expert review"
+}

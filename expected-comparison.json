@@ -1,0 +1,50 @@
+[
+  {
+    "policy": "strict",
+    "method": "B3-generic",
+    "N": 14,
+    "A": 6,
+    "S": 6,
+    "V": 0,
+    "U": 0,
+    "R": 2,
+    "Ab": 6,
+    "G": 4
+  },
+  {
+    "policy": "strict",
+    "method": "RustCovenant-Verify",
+    "N": 14,
+    "A": 7,
+    "S": 6,
+    "V": 0,
+    "U": 1,
+    "R": 1,
+    "Ab": 6,
+    "G": 4
+  },
+  {
+    "policy": "normalized",
+    "method": "B3-generic",
+    "N": 14,
+    "A": 6,
+    "S": 6,
+    "V": 0,
+    "U": 0,
+    "R": 2,
+    "Ab": 6,
+    "G": 4
+  },
+  {
+    "policy": "normalized",
+    "method": "RustCovenant-Verify",
+    "N": 14,
+    "A": 8,
+    "S": 7,
+    "V": 0,
+    "U": 1,
+    "R": 2,
+    "Ab": 4,
+    "G": 5
+  }
+]

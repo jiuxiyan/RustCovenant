@@ -1,0 +1,75 @@
+{
+  "scope": "Unsigned review derivative; original signed records are archived separately. No signature over this derivative is claimed.",
+  "original_evidence_sha256": "8dcc5087c85070e4aa88e4b62c2176f92aa4f93d4e0abf528d18657e15824818",
+  "original_context_sha256": "823ea8281ab57001c9f7bf2f473c1551d32981b3fbd3c0be80c25360edd36a1f",
+  "context": {
+    "source": {
+      ".cargo_vcs_info.json": "0282e25c25c8e4a2d4bba985bbd56c0289fafbe01393513d540de113d892323c",
+      ".gitignore": "44c92e3a70ad3307b7056871c2bdb096d8bfa9373f5bf06a79bb6324a20ff2fb",
+      "Cargo.lock": "4ce92e9ca904536e719441e22bc84e0f28abaf2252c39873db3aa5fcd704d805",
+      "Cargo.toml": "a5a10cf5cefe0ef6d02bb1ee8e83054c17e9a375d1978edd0a0be41e68198a5b",
+      "Cargo.toml.orig": "475cad01eea3787cc2a09ba1f38ed47d2e65a1a73a7db4773b6a9b6157413895",
+      "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "README.md": "cedafcc033335184665f8664108e652a197df780d8f3fbfc96b56b723cd93191",
+      "examples/exam.rs": "839369f83f9ba2998c2cbfeda8ea702a726b6a2dd60dfb8cc247ba1f53949612",
+      "src/lib.rs": "f2f0a9921baae434f86661e4838209d5b4f94686e50a3e69a37a29175c6886f6",
+      "tests/alloc_tests.rs": "932517cee44c0d2230778ea6aa9edc6172c66f388630e2af2b1ed4ee1c785801"
+    },
+    "harness": {
+      "hidden.rs": "11fa011e17f4253ecfa7aedadae68b2e826f08b0be3c3ba300f4207427c83ebc"
+    },
+    "models": [
+      "SB",
+      "TB"
+    ],
+    "timeout_s": 120,
+    "rust_commit": "287487624357c19b22d27aa3ed584b8ccd080b4d",
+    "leak_policy_by_suite": {
+      "hidden": false
+    },
+    "contract_sha256": "1d1d84344596cb8e77057714aa790f90b0f97a2c92b86e23b527f7092098cf12",
+    "miri_sha256": "f763a3b84abaa27db8cb0b4cdef8bec0daf1b0f1e72f9ae4dae63f84835acc57",
+    "bwrap_sha256": "85580dd52ed366ece8844e90fa75ac7c4de8802963071344e123221fb9f6f11e",
+    "evaluator_sha256": "895ccb55f247761e8afee9b33a7f0b32dfe3bfcb4d2c42f330db2bc0480ae455",
+    "metadata": {
+      "crate_name": "caja",
+      "edition": "2021",
+      "lib_path": "src/lib.rs",
+      "features": [],
+      "package": "caja",
+      "version": "0.3.0"
+    },
+    "sysroot_manifest_sha256": "4b42015c4e03e6aadfa96260c63190ea2916aa456833995aa59af0bd239bcb54"
+  },
+  "processes": {
+    "compile": {
+      "status": "PASS",
+      "returncode": 0,
+      "elapsed_s": 3.13,
+      "original_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "path_normalization_applied": false
+    },
+    "hidden-SB": {
+      "status": "PASS",
+      "returncode": 0,
+      "elapsed_s": 3.359,
+      "original_log_sha256": "374ec24e544cfe1a34f9abe2531afdf9a601c0649c14c46ccfa469d6c3928db5",
+      "log_sha256": "374ec24e544cfe1a34f9abe2531afdf9a601c0649c14c46ccfa469d6c3928db5",
+      "path_normalization_applied": false
+    },
+    "hidden-TB": {
+      "status": "PASS",
+      "returncode": 0,
+      "elapsed_s": 3.11,
+      "original_log_sha256": "374ec24e544cfe1a34f9abe2531afdf9a601c0649c14c46ccfa469d6c3928db5",
+      "log_sha256": "374ec24e544cfe1a34f9abe2531afdf9a601c0649c14c46ccfa469d6c3928db5",
+      "path_normalization_applied": false
+    }
+  },
+  "execution_flags": {
+    "complete": true,
+    "snapshot_unchanged": true,
+    "original_inputs_unchanged": true
+  }
+}

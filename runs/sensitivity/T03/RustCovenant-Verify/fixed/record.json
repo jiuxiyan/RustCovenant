@@ -1,0 +1,87 @@
+{
+  "scope": "Unsigned review derivative; original signed records are archived separately. No signature over this derivative is claimed.",
+  "original_evidence_sha256": "4ae6610fbf99e2de699b4b7cb8cd7766f81074388b52b666ce44a807b35b0a92",
+  "original_context_sha256": "e08a424f091592781336d4749e936136e4b5798d6ccd97d83805a11ebbc163b8",
+  "context": {
+    "source": {
+      ".cargo_vcs_info.json": "9f1cfed5a88d1f7714f3ca5625f435a1f11bab7f7521c23d9b17f1cf557caf9d",
+      ".github/check-basic-style.sh": "700a84a5f81ddaa045eec2a15a4e9538117ca589447b2775125d17429dada1bb",
+      ".github/workflows/ci.yml": "de13e1347de45265b801916494480a26d96f2e80fdab0a4b57c0b718774a9f36",
+      ".gitignore": "118aa5b6b431e2bd5f8e1bb69bb4dbfb16f2d9465ac1b8bf3417a2a1f48d3d03",
+      "CHANGELOG.md": "f84dc288d9c9ddd1177be38a768e6ab58f286f41aa7b77427e11c71748fde67f",
+      "Cargo.lock": "0321507ac3fcf6667779695bd24ab2e98000bcd190e1f190d010ccb04bd44aac",
+      "Cargo.toml": "dada111505acdb580f8cc376261f3f520c0e44f46975058b840f560956cbb8c4",
+      "Cargo.toml.orig": "7b3a57051021436992e7b85ac30595c03794f3c29f16d8ab87323e41740b1c8f",
+      "LICENSE-APACHE": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+      "LICENSE-MIT": "8ee6abab8ae2e54d0d614b479bdbe918e26b81160a9a6affd36264e20dfd6fd9",
+      "README.md": "e0f8d6b0a1511207697a6402596d05980c60c12c89a8343fd5d8b862c9b8311f",
+      "benches/benchmark.rs": "9dd6fe5489d587e7718c199e937d95237a6a10f6f5aac3daedd9b31bcb021572",
+      "examples/compact.rs": "ad899579cfc6bdfa9c2e1c10f928de95054528ac595460dfdf69d0358691505d",
+      "examples/correct_drop.rs": "df302252b5e6df0072c9870429b40e15cbfd26b6af753ec811ca8eeac57af822",
+      "examples/iterators.rs": "0dacf55691ffaee80f8fcb8da0667add3615e0a81d368dad5dbea67b07fc54ea",
+      "examples/printing.rs": "65532b1db52998ce32bde3a92df62467edde53e1aec5bc563f352996ce76e3fd",
+      "src/core/bitvec.rs": "bada9f85036ec508b09c3f48169137efa8d224558e7bc55737c439458ab6bd12",
+      "src/core/mod.rs": "784ca2437c56507772a3d74c32d49c0afd0654c0e9f1136b3f1b93cd37d913b6",
+      "src/core/option.rs": "2d17b36e838f744c7394bcad3588787431cb5b3d0087b88d5a2728540e0483c4",
+      "src/iter.rs": "f58d6022269473b4ddf1b82b9e86b21b647bfb21d17b358d7555f26aeb2d67ca",
+      "src/lib.rs": "b5c2265bf2d890aaf0eb5d61e60d929f8a27d5485ce6ff224227cad5a4cbd1f9",
+      "src/tests.rs": "478fc73f98492147899fce6cc4646e937207aca886fd452255c6bf435086c97c"
+    },
+    "harness": {
+      "hidden.rs": "7457e8d2b26723f133a97236f19c52c99c2b48efdf1e7abe59dbaf0660c04f59"
+    },
+    "models": [
+      "SB",
+      "TB"
+    ],
+    "timeout_s": 120,
+    "rust_commit": "287487624357c19b22d27aa3ed584b8ccd080b4d",
+    "leak_policy_by_suite": {
+      "hidden": true
+    },
+    "contract_sha256": "c9d98c4a7554d9a57b93e92308fe02b5ac4d53306e1d0df92bb0451d47484476",
+    "miri_sha256": "f763a3b84abaa27db8cb0b4cdef8bec0daf1b0f1e72f9ae4dae63f84835acc57",
+    "bwrap_sha256": "85580dd52ed366ece8844e90fa75ac7c4de8802963071344e123221fb9f6f11e",
+    "evaluator_sha256": "895ccb55f247761e8afee9b33a7f0b32dfe3bfcb4d2c42f330db2bc0480ae455",
+    "metadata": {
+      "crate_name": "stable_vec",
+      "edition": "2018",
+      "lib_path": "src/lib.rs",
+      "features": [],
+      "package": "stable-vec",
+      "version": "0.4.3"
+    },
+    "sysroot_manifest_sha256": "4b42015c4e03e6aadfa96260c63190ea2916aa456833995aa59af0bd239bcb54"
+  },
+  "processes": {
+    "compile": {
+      "status": "PASS",
+      "returncode": 0,
+      "elapsed_s": 3.761,
+      "original_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "path_normalization_applied": false
+    },
+    "hidden-SB": {
+      "status": "PASS",
+      "returncode": 0,
+      "elapsed_s": 3.106,
+      "original_log_sha256": "c9d1219ebedacb08ef129c030bf595dcf875f7d87a15aa57139484bf31096017",
+      "log_sha256": "c9d1219ebedacb08ef129c030bf595dcf875f7d87a15aa57139484bf31096017",
+      "path_normalization_applied": false
+    },
+    "hidden-TB": {
+      "status": "PASS",
+      "returncode": 0,
+      "elapsed_s": 3.178,
+      "original_log_sha256": "c9d1219ebedacb08ef129c030bf595dcf875f7d87a15aa57139484bf31096017",
+      "log_sha256": "c9d1219ebedacb08ef129c030bf595dcf875f7d87a15aa57139484bf31096017",
+      "path_normalization_applied": false
+    }
+  },
+  "execution_flags": {
+    "complete": true,
+    "snapshot_unchanged": true,
+    "original_inputs_unchanged": true
+  }
+}

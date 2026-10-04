@@ -1,0 +1,75 @@
+{
+  "scope": "This is an unsigned, path-normalized review derivative, not the original signed record. Original source, contract, prompt, response and generated-program bytes are unchanged.",
+  "rule": "In process logs only, replace the exact original host toolchain-root prefix with /toolchain. Preserve the remaining Rust library path, line and column. No diagnostics are removed.",
+  "original_prefix_sha256": "fbb8110c361799bd9097b80dfbbc924185657dbd0fc1d678c92baec9d19c0d19",
+  "replacement": "/toolchain",
+  "changed_logs": [
+    {
+      "file": "runs/reference/T05-B1/hidden-SB.log",
+      "original_sha256": "ffccf0da42877e1e7d1904c909d6a2a2fb9d0dd1f1cb7c0d9f77381145b44c55",
+      "review_sha256": "48008518504a25447bc9fd620510897bd1ecfc4c0b74c681933d0626a35f762c",
+      "replacement_count": 6
+    },
+    {
+      "file": "runs/reference/T05-B1/hidden-TB.log",
+      "original_sha256": "3fc009bc3fdf88e19a9854c142a0d2ebd98379e1307c3bee02e4356224a87e9e",
+      "review_sha256": "70a67bfea0a9946ed029332e4ed91c92186fcf54dae617928c04f56f3b2d34e6",
+      "replacement_count": 6
+    },
+    {
+      "file": "runs/reference/T06-B2/witness-SB.log",
+      "original_sha256": "3b66e9c5ba82cbaa53b111d8a55daef9de9b8be0f800a3e6ecb83883d4833338",
+      "review_sha256": "161408799084c16d70e536b2128d5db069def67c6676493818f086662cbb7e8d",
+      "replacement_count": 2
+    },
+    {
+      "file": "runs/reference/T06-B2/hidden-SB.log",
+      "original_sha256": "93da30dbecd5ea3799abf857df7c59e8e111f7dc8019d34264196eb1b0f26310",
+      "review_sha256": "1bd8fcb3ab88ab75e36c457e0ca878f5682151fdb0727020df67ae78146cc941",
+      "replacement_count": 2
+    },
+    {
+      "file": "runs/strict/T01/B3-generic/fixed/hidden-SB.log",
+      "original_sha256": "148acd5d34e41819441cc1fa374706d423fc3acde031b66fb6fd53ec428157bc",
+      "review_sha256": "ecad67839ca5a0c4ecb50cf7eaaa83b3b72548c7d89a943290bbbda8f310033a",
+      "replacement_count": 3
+    },
+    {
+      "file": "runs/strict/T01/B3-generic/fixed/hidden-TB.log",
+      "original_sha256": "bc46e1f3c7814f168941d2c71aabb9f16bee066a533e3377a0fd03e547e4690a",
+      "review_sha256": "3c7d3c08b369e8ef36ddb500e081498398f993604c1d774f227367c8f64eccfa",
+      "replacement_count": 3
+    },
+    {
+      "file": "runs/strict/T05/B3-generic/T05-B1/hidden-SB.log",
+      "original_sha256": "f4a59124bb4edbbc044570e1823089254c8dee4bcf3556d59743bda3828831e0",
+      "review_sha256": "8b795f071cc227e94387829fc4e36507ad4efeb02892dec766d8482862e73f2c",
+      "replacement_count": 8
+    },
+    {
+      "file": "runs/strict/T05/B3-generic/T05-B1/hidden-TB.log",
+      "original_sha256": "32cd1804a4f83378287bad8561f67fd65e75cc025eb7635fd6223b4c5dedf5f0",
+      "review_sha256": "447a75c6388ada20a60e9920a83fb8ed1ee60a2f1613b71d12d0080e9066ac1a",
+      "replacement_count": 8
+    },
+    {
+      "file": "runs/strict/T06/B3-generic/fixed/hidden-SB.log",
+      "original_sha256": "3333dd501cd52391d5b8e89deceb9f640aba0a9fbeb5e98f3bac86aa80f16c19",
+      "review_sha256": "98d78a46a744444c83e9b84f86bab682c95c0174f41c55e44362882e7357313c",
+      "replacement_count": 6
+    },
+    {
+      "file": "runs/strict/T06/B3-generic/fixed/hidden-TB.log",
+      "original_sha256": "3333dd501cd52391d5b8e89deceb9f640aba0a9fbeb5e98f3bac86aa80f16c19",
+      "review_sha256": "98d78a46a744444c83e9b84f86bab682c95c0174f41c55e44362882e7357313c",
+      "replacement_count": 6
+    },
+    {
+      "file": "runs/strict/T06/RustCovenant-Verify/T06-B2/hidden-SB.log",
+      "original_sha256": "935888f304f55f41b414acbd3eeb82b60a8dc63897210f65a8e8a64e1114ed7e",
+      "review_sha256": "85a7715e47505fbb3008d635940dc1343bd5d1d4d82f0a41e1cf1cbe6f6c2de6",
+      "replacement_count": 6
+    }
+  ],
+  "changed_log_count": 11
+}

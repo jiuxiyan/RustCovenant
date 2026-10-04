@@ -1,0 +1,21 @@
+[package]
+name = "stack_collections"
+version = "0.3.3"
+edition = "2024"
+authors = ["Kyle Thapar <kylethapar2007@outlook.com>"]
+description = "Stack-allocated collections for Rust"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/OverwrittenCode/stack_collections"
+documentation = "https://docs.rs/stack_collections"
+keywords = ["stack", "collections", "no-heap"]
+categories = ["data-structures", "no-std", "no-std::no-alloc"]
+
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg", "docsrs"]
+
+[features]
+default = ["std"]
+std = ["alloc"]
+alloc = []
+nightly = []

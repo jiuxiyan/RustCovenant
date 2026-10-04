@@ -1,0 +1,16 @@
+
+thread 'main' panicked at /source/src/lib.rs:416:13:
+`index (8) >= capacity (8)` in `StableVecFacade::remove`
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+note: in Miri, you may have to set `MIRIFLAGS=-Zmiri-env-forward=RUST_BACKTRACE` for the environment variable to have an effect
+
+thread 'main' panicked at /source/src/lib.rs:350:13:
+`index (8) >= capacity (8)` in `StableVecFacade::insert`
+
+thread 'main' panicked at /harness/hidden.rs:23:13:
+controlled drop failure for 1
+
+thread 'main' panicked at /harness/hidden.rs:162:5:
+assertion `left == right` failed
+  left: 3
+ right: 5

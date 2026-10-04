@@ -1,0 +1,45 @@
+
+thread 'main' panicked at /harness/hidden.rs:124:13:
+injected destructor panic
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+note: in Miri, you may have to set `MIRIFLAGS=-Zmiri-env-forward=RUST_BACKTRACE` for the environment variable to have an effect
+error: Undefined Behavior: attempting deallocation using <38157> at alloc8612, but that tag does not exist in the borrow stack for this location
+   --> /source/src/lib.rs:76:13
+    |
+    = note: attempting deallocation using <38157> at alloc8612, but that tag does not exist in the borrow stack for this location
+    |
+    = help: this indicates a potential bug in the program: it performed an invalid operation, but the Stacked Borrows rules it violated are still experimental
+    = help: see https://github.com/rust-lang/unsafe-code-guidelines/blob/master/wip/stacked-borrows.md for further information
+help: <38157> was created by a SharedReadWrite retag at offsets [0x0..0x50]
+   --> /harness/hidden.rs:263:47
+    |
+263 |     let r2 = catch_unwind(AssertUnwindSafe(|| drop(b)));
+    |                                               ^^^^^^^
+    = note: BACKTRACE (of the first span):
+    = note: inside `<aligned_box::AlignedBox<[BombTrack]> as std::ops::Drop>::drop` at /source/src/lib.rs:76:13: 76:63
+    = note: inside `std::ptr::drop_in_place::<aligned_box::AlignedBox<[BombTrack]>> - shim(Some(aligned_box::AlignedBox<[BombTrack]>))` at /toolchain/lib/rustlib/src/rust/library/core/src/ptr/mod.rs:523:1: 523:56
+    = note: inside `std::mem::drop::<aligned_box::AlignedBox<[BombTrack]>>` at /toolchain/lib/rustlib/src/rust/library/core/src/mem/mod.rs:940:24: 940:25
+note: inside closure
+   --> /harness/hidden.rs:263:47
+    |
+263 |     let r2 = catch_unwind(AssertUnwindSafe(|| drop(b)));
+    |                                               ^^^^^^^
+    = note: inside `<std::panic::AssertUnwindSafe<{closure@/harness/hidden.rs:263:44: 263:46}> as std::ops::FnOnce<()>>::call_once` at /toolchain/lib/rustlib/src/rust/library/core/src/panic/unwind_safe.rs:272:9: 272:19
+    = note: inside `std::panicking::r#try::do_call::<std::panic::AssertUnwindSafe<{closure@/harness/hidden.rs:263:44: 263:46}>, ()>` at /toolchain/lib/rustlib/src/rust/library/std/src/panicking.rs:587:40: 587:43
+    = note: inside `std::panicking::r#try::<(), std::panic::AssertUnwindSafe<{closure@/harness/hidden.rs:263:44: 263:46}>>` at /toolchain/lib/rustlib/src/rust/library/std/src/panicking.rs:550:19: 550:88
+    = note: inside `std::panic::catch_unwind::<std::panic::AssertUnwindSafe<{closure@/harness/hidden.rs:263:44: 263:46}>, ()>` at /toolchain/lib/rustlib/src/rust/library/std/src/panic.rs:359:14: 359:33
+note: inside `scenario_panic_during_shrink_then_safe_drop_no_double_drop`
+   --> /harness/hidden.rs:263:14
+    |
+263 |     let r2 = catch_unwind(AssertUnwindSafe(|| drop(b)));
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+note: inside `main`
+   --> /harness/hidden.rs:273:5
+    |
+273 |     scenario_panic_during_shrink_then_safe_drop_no_double_drop();
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+note: some details are omitted, run with `MIRIFLAGS=-Zmiri-backtrace=full` for a verbose backtrace
+
+error: aborting due to 1 previous error
+

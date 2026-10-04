@@ -1,0 +1,48 @@
+
+thread 'main' panicked at /source/src/toodee.rs:696:21:
+assertion `left == right` failed: unexpected iterator length
+  left: 0x3ec90
+ right: 0x3eca0
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+note: in Miri, you may have to set `MIRIFLAGS=-Zmiri-env-forward=RUST_BACKTRACE` for the environment variable to have an effect
+
+thread 'main' panicked at /harness/hidden.rs:58:13:
+controlled iterator failure
+error: Undefined Behavior: write access through <44644> (root of the allocation) at alloc19233[0x10] is forbidden
+   --> /source/src/toodee.rs:1054:25
+    |
+    = note: write access through <44644> (root of the allocation) at alloc19233[0x10] is forbidden
+    |
+    = help: this indicates a potential bug in the program: it performed an invalid operation, but the Tree Borrows rules it violated are still experimental
+    = help: the accessed tag <44644> (root of the allocation) is foreign to the protected tag <45793> (i.e., it is not a child)
+    = help: this foreign write access would cause the protected tag <45793> (currently Frozen) to become Disabled
+    = help: protected tags must never be Disabled
+help: the accessed tag <44644> was created here
+   --> /harness/hidden.rs:162:35
+    |
+162 |           let initial: Vec<Datum> = (0u32..6)
+    |  ___________________________________^
+163 | |             .map(|i| Datum::new(i, &drops))
+164 | |             .collect();
+    | |______________________^
+help: the protected tag <45793> was created here, in the initial state Frozen
+   --> /harness/hidden.rs:169:13
+    |
+169 |             drain.collect()
+    |             ^^^^^^^^^^^^^^^
+    = note: BACKTRACE (of the first span):
+    = note: inside `<<toodee::DrainCol<'_, T> as std::ops::Drop>::drop::DropGuard<'_, '_, Datum> as std::ops::Drop>::drop` at /source/src/toodee.rs:1054:25: 1054:55
+    = note: inside `std::ptr::drop_in_place::<<toodee::DrainCol<'_, T> as std::ops::Drop>::drop::DropGuard<'_, '_, Datum>> - shim(Some(<toodee::DrainCol<'_, T> as std::ops::Drop>::drop::DropGuard<'_, '_, Datum>))` at /toolchain/lib/rustlib/src/rust/library/core/src/ptr/mod.rs:523:1: 523:56
+    = note: inside `<toodee::DrainCol<'_, Datum> as std::ops::Drop>::drop` at /source/src/toodee.rs:1081:24: 1081:25
+    = note: inside `std::ptr::drop_in_place::<toodee::DrainCol<'_, Datum>> - shim(Some(toodee::DrainCol<'_, Datum>))` at /toolchain/lib/rustlib/src/rust/library/core/src/ptr/mod.rs:523:1: 523:56
+    = note: inside `<toodee::DrainCol<'_, Datum> as std::iter::Iterator>::collect::<std::vec::Vec<Datum>>` at /toolchain/lib/rustlib/src/rust/library/core/src/iter/traits/iterator.rs:1971:9: 1971:38
+note: inside `main`
+   --> /harness/hidden.rs:169:13
+    |
+169 |             drain.collect()
+    |             ^^^^^^^^^^^^^^^
+
+note: some details are omitted, run with `MIRIFLAGS=-Zmiri-backtrace=full` for a verbose backtrace
+
+error: aborting due to 1 previous error
+

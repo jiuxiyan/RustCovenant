@@ -1,0 +1,10 @@
+
+thread 'main' panicked at /source/src/toodee.rs:696:21:
+assertion `left == right` failed: unexpected iterator length
+  left: 0x31748
+ right: 0x31758
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+note: in Miri, you may have to set `MIRIFLAGS=-Zmiri-env-forward=RUST_BACKTRACE` for the environment variable to have an effect
+
+thread 'main' panicked at /harness/hidden.rs:60:13:
+controlled iterator failure

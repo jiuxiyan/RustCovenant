@@ -1,0 +1,57 @@
+{
+  "task_id": "slab_disjoint_uninit",
+  "crate": "slab",
+  "advisory": "RUSTSEC-2025-0047",
+  "advisory_url": "https://rustsec.org/advisories/RUSTSEC-2025-0047.html",
+  "api_docs": "https://docs.rs/slab/0.4.10/slab/struct.Slab.html#method.get_disjoint_mut",
+  "vulnerable_version": "0.4.10",
+  "fixed_version": "0.4.11",
+  "target_api": "Slab::get_disjoint_mut",
+  "root_cause": "The bounds check uses Vec::capacity rather than Vec::len, forming an Entry reference into allocated but uninitialized entries.",
+  "visible_inputs": [
+    "src/",
+    "Cargo.toml",
+    "advisory description",
+    "witness compiler/runtime result"
+  ],
+  "hidden_obligations": [
+    "For distinct occupied keys return mutable references to those entries in input order; writing one must not change others.",
+    "Allocated capacity is not initialized entry length: never form an Entry reference at an uninitialized index. Return IndexOutOfBounds there, IndexVacant at a vacancy, and OverlappingIndices for duplicate keys.",
+    "Removal and reinsertion must preserve all unaffected values and ordinary exactly-once destruction."
+  ],
+  "allowed_changes": [
+    "implementation under src/ preserving the public API",
+    "boundary metadata used before reference formation"
+  ],
+  "prohibited_changes": [
+    "new dependencies",
+    "toolchain changes",
+    "changing the public signature",
+    "activating serde",
+    "special-casing the harness"
+  ],
+  "non_goals": [
+    "not a general proof of slab soundness",
+    "not an evaluation of optional serde integration"
+  ],
+  "frozen_at_utc": "2026-10-03T08:41:06.225167+00:00",
+  "freeze_revision": 3,
+  "harness_sha256": {
+    "witness": "01f9d292eef950349dbf8a8ed5d29967be59adbaef47f67d1cf5602a2def3f60",
+    "ordinary": "86af835be7aae25306fd6d1a2754ee9c2a5bb5eb44eb76b31d44c3edc83f1adb",
+    "hidden": "e1bc3f1ac8f1a41ae4b63f69586d0984c5b7d437147f5744ebb393cb14345392"
+  },
+  "construction_phase": "after original/fixed feasibility controls, before any new model trajectory; fixed source was inspected",
+  "clauses": [
+    "For distinct occupied keys return mutable references to those entries in input order; writing one must not change others.",
+    "Allocated capacity is not initialized entry length: never form an Entry reference at an uninitialized index. Return IndexOutOfBounds there, IndexVacant at a vacancy, and OverlappingIndices for duplicate keys.",
+    "Removal and reinsertion must preserve all unaffected values and ordinary exactly-once destruction."
+  ],
+  "leak_policy_by_suite": {
+    "witness": false,
+    "ordinary": false,
+    "hidden": false
+  },
+  "leak_policy": "Leaks allowed only in panic suites, never required. No exact panic-path leak count is an oracle.",
+  "oracle_review": "automated only; no independent expert review"
+}

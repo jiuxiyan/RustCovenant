@@ -1,0 +1,13 @@
+[package]
+name = "caja"
+version = "0.3.0"
+edition = "2021"
+authors = [ "Emanuel De Avila" ]
+license = "GPL-3.0-or-later"
+description = "Adds the Caja struct which is basically Box<[T;n]>, but n can be not known at compile-time"
+keywords = [ "Arrays", "Heap" ]
+repository = "https://github.com/EmanuelGCC/Caja/tree/main"
+readme = "README.md"
+categories = [ "memory-management" ]
+
+[dependencies]

@@ -1,0 +1,17 @@
+error[E0382]: borrow of moved value: `v`
+   --> /harness/hidden.rs:130:27
+    |
+111 |     let mut v = make_vec(5, &drops, &bomb);
+    |         ----- move occurs because `v` has type `stack_collections::StackVec<Elem, 8>`, which does not implement the `Copy` trait
+...
+116 |         move || {
+    |         ------- value moved into closure here
+117 |             v.retain(move |e: &mut Elem| {
+    |             - variable moved due to use in closure
+...
+130 |     assert_reachable_live(&v, &drops, true);
+    |                           ^^ value borrowed here after move
+
+error: aborting due to 1 previous error
+
+For more information about this error, try `rustc --explain E0382`.

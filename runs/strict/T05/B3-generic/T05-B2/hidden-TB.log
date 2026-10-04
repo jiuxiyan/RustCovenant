@@ -1,0 +1,11 @@
+
+thread 'main' panicked at /harness/hidden.rs:134:17:
+predicate panic
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+note: in Miri, you may have to set `MIRIFLAGS=-Zmiri-env-forward=RUST_BACKTRACE` for the environment variable to have an effect
+
+thread 'main' panicked at /harness/hidden.rs:31:13:
+injected destructor panic
+
+thread 'main' panicked at /source/src/stack_string.rs:402:9:
+truncate not on char boundary

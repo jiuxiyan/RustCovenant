@@ -1,0 +1,43 @@
+{
+  "task_id": "caja_index_oob",
+  "crate": "caja",
+  "original": "0.2.1",
+  "fixed": "0.3.0",
+  "advisory": "RUSTSEC-2026-0130",
+  "C0": "C0: Preserve Caja::new for positive lengths and Copy, non-zero-sized numeric elements. Safe Index/IndexMut must reject all indices >= len before access; valid indices retain their value/read/write behavior, and failed access leaves initialized contents and length unchanged. Preserve clone independence. Do not remove safe public APIs or add stricter bounds. Scope excludes zero length, ZST, unsafe initializers, mutable slice aliasing, and owning non-Copy elements.",
+  "leak_policy": {
+    "witness": false,
+    "ordinary": false,
+    "hidden": false
+  },
+  "phase": "author-developed feasibility revision 2, before new model generation",
+  "created_utc": "2026-10-03T09:55:19.776382+00:00",
+  "author_saw_fixed_source": true,
+  "independent_review": false,
+  "source_hashes": {
+    "original": {
+      ".cargo_vcs_info.json": "15f7ef2e9ecd1ebc0691bfc855c19cfe63054472e2ed19404d3917de18af4755",
+      ".gitignore": "44c92e3a70ad3307b7056871c2bdb096d8bfa9373f5bf06a79bb6324a20ff2fb",
+      "Cargo.lock": "7a606648e6328d5f99c22961fb55d2a97d434e106cd19bd0db5c1b94ddce3ea2",
+      "Cargo.toml": "32dc2c4480a73466a5ebcee708f741f47556e46cb4ded055ffbea5aa6dfeda72",
+      "Cargo.toml.orig": "427407ea16940738432585931bb2904d137b1e5866e1f8f3ca5fac8424bac9b8",
+      "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "README.md": "cedafcc033335184665f8664108e652a197df780d8f3fbfc96b56b723cd93191",
+      "examples/exam.rs": "3f109f978f232bdf161e3b1f538b6746e431d28988065c0604dd63fbaac0e43a",
+      "src/lib.rs": "0257194a0d57e92c855c4e563322031b84a42a069dfc8014d3996af88440835e",
+      "tests/alloc_tests.rs": "28d5b07b8c81942eb36e282008b1f67d8b96984b3409192b5e2b5d1233c1ae09"
+    },
+    "fixed": {
+      ".cargo_vcs_info.json": "0282e25c25c8e4a2d4bba985bbd56c0289fafbe01393513d540de113d892323c",
+      ".gitignore": "44c92e3a70ad3307b7056871c2bdb096d8bfa9373f5bf06a79bb6324a20ff2fb",
+      "Cargo.lock": "4ce92e9ca904536e719441e22bc84e0f28abaf2252c39873db3aa5fcd704d805",
+      "Cargo.toml": "a5a10cf5cefe0ef6d02bb1ee8e83054c17e9a375d1978edd0a0be41e68198a5b",
+      "Cargo.toml.orig": "475cad01eea3787cc2a09ba1f38ed47d2e65a1a73a7db4773b6a9b6157413895",
+      "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "README.md": "cedafcc033335184665f8664108e652a197df780d8f3fbfc96b56b723cd93191",
+      "examples/exam.rs": "839369f83f9ba2998c2cbfeda8ea702a726b6a2dd60dfb8cc247ba1f53949612",
+      "src/lib.rs": "f2f0a9921baae434f86661e4838209d5b4f94686e50a3e69a37a29175c6886f6",
+      "tests/alloc_tests.rs": "932517cee44c0d2230778ea6aa9edc6172c66f388630e2af2b1ed4ee1c785801"
+    }
+  }
+}

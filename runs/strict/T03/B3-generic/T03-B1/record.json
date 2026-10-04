@@ -1,0 +1,87 @@
+{
+  "scope": "Unsigned review derivative; original signed records are archived separately. No signature over this derivative is claimed.",
+  "original_evidence_sha256": "b810c149cd9c1d4e8a4370b985c49e6ace1d0a71f69ec3b4d95ccbc9a106801e",
+  "original_context_sha256": "8f047f57257a99557839e3facf07272d79c3ed92dbf32ee2340b31de937fa889",
+  "context": {
+    "source": {
+      ".cargo_vcs_info.json": "4c7f9460c4bf2ee184cc1211c3c2389ef9e8741d1a1f88c3fee53a5c1c22f4fc",
+      ".github/check-basic-style.sh": "700a84a5f81ddaa045eec2a15a4e9538117ca589447b2775125d17429dada1bb",
+      ".github/workflows/ci.yml": "57fcf85b9221e580a4c3e4ced06c6c9d9ec2e970a37b9ad32c7f5dfc7e22dc1f",
+      ".gitignore": "118aa5b6b431e2bd5f8e1bb69bb4dbfb16f2d9465ac1b8bf3417a2a1f48d3d03",
+      "CHANGELOG.md": "cd3191a24e19021e0833cafd31c0ad06ac151666878464394efe645de5239e7c",
+      "Cargo.lock": "8c25e1e0ba69845a52816324eab2ae0db93f563e5737d3e0f84adf5dee72f35d",
+      "Cargo.toml": "4f5112f5cfae8f23a599fc7846b505856de0a044b3f2f3cd18302e1e6cb4606c",
+      "Cargo.toml.orig": "9276a351dd240bda609253c75b537f8a5d65d7ec120ddaf71edc9cdfcec99578",
+      "LICENSE-APACHE": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+      "LICENSE-MIT": "8ee6abab8ae2e54d0d614b479bdbe918e26b81160a9a6affd36264e20dfd6fd9",
+      "README.md": "e0f8d6b0a1511207697a6402596d05980c60c12c89a8343fd5d8b862c9b8311f",
+      "benches/benchmark.rs": "9dd6fe5489d587e7718c199e937d95237a6a10f6f5aac3daedd9b31bcb021572",
+      "examples/compact.rs": "ad899579cfc6bdfa9c2e1c10f928de95054528ac595460dfdf69d0358691505d",
+      "examples/correct_drop.rs": "df302252b5e6df0072c9870429b40e15cbfd26b6af753ec811ca8eeac57af822",
+      "examples/iterators.rs": "0dacf55691ffaee80f8fcb8da0667add3615e0a81d368dad5dbea67b07fc54ea",
+      "examples/printing.rs": "65532b1db52998ce32bde3a92df62467edde53e1aec5bc563f352996ce76e3fd",
+      "src/core/bitvec.rs": "29e42736d24b0c58d68da8a7fc9be6431bf373046f43c1385c751727e5f7f2c2",
+      "src/core/mod.rs": "c0dd9d91760cb2a2d1fe572641c7fa5e610f2f52e9e2921702971986dd3029a5",
+      "src/core/option.rs": "408246289af8c6b294f6789fd2cc68566c93a3c98c219eb95198a497978678b5",
+      "src/iter.rs": "f58d6022269473b4ddf1b82b9e86b21b647bfb21d17b358d7555f26aeb2d67ca",
+      "src/lib.rs": "2a0f54e3936744da1b5a78bc6a8f78b0f9bca7b6febbbedd1532fbdeb250db95",
+      "src/tests.rs": "178a0607d40b252a66b18597be3b18276eaeeae64019e1684398490968e0707d"
+    },
+    "harness": {
+      "hidden.rs": "d3d1959ca2fc927a76bcad0755373afc0aabf987a3ecefc1e4d9d153a5fb389f"
+    },
+    "models": [
+      "SB",
+      "TB"
+    ],
+    "timeout_s": 120,
+    "rust_commit": "287487624357c19b22d27aa3ed584b8ccd080b4d",
+    "leak_policy_by_suite": {
+      "hidden": true
+    },
+    "contract_sha256": "c9d98c4a7554d9a57b93e92308fe02b5ac4d53306e1d0df92bb0451d47484476",
+    "miri_sha256": "f763a3b84abaa27db8cb0b4cdef8bec0daf1b0f1e72f9ae4dae63f84835acc57",
+    "bwrap_sha256": "85580dd52ed366ece8844e90fa75ac7c4de8802963071344e123221fb9f6f11e",
+    "evaluator_sha256": "895ccb55f247761e8afee9b33a7f0b32dfe3bfcb4d2c42f330db2bc0480ae455",
+    "metadata": {
+      "crate_name": "stable_vec",
+      "edition": "2018",
+      "lib_path": "src/lib.rs",
+      "features": [],
+      "package": "stable-vec",
+      "version": "0.4.2"
+    },
+    "sysroot_manifest_sha256": "4b42015c4e03e6aadfa96260c63190ea2916aa456833995aa59af0bd239bcb54"
+  },
+  "processes": {
+    "compile": {
+      "status": "PASS",
+      "returncode": 0,
+      "elapsed_s": 3.408,
+      "original_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "path_normalization_applied": false
+    },
+    "hidden-SB": {
+      "status": "ASSERT_OR_PANIC",
+      "returncode": 101,
+      "elapsed_s": 3.406,
+      "original_log_sha256": "af60b173c215faad30d634dd3205f131155431295c509d7414509cf443a8e14f",
+      "log_sha256": "af60b173c215faad30d634dd3205f131155431295c509d7414509cf443a8e14f",
+      "path_normalization_applied": false
+    },
+    "hidden-TB": {
+      "status": "ASSERT_OR_PANIC",
+      "returncode": 101,
+      "elapsed_s": 3.509,
+      "original_log_sha256": "af60b173c215faad30d634dd3205f131155431295c509d7414509cf443a8e14f",
+      "log_sha256": "af60b173c215faad30d634dd3205f131155431295c509d7414509cf443a8e14f",
+      "path_normalization_applied": false
+    }
+  },
+  "execution_flags": {
+    "complete": true,
+    "snapshot_unchanged": true,
+    "original_inputs_unchanged": true
+  }
+}

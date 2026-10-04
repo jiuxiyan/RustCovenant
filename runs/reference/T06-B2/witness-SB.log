@@ -1,0 +1,31 @@
+
+thread 'main' panicked at /harness/witness.rs:7:182:
+injected destructor panic
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+note: in Miri, you may have to set `MIRIFLAGS=-Zmiri-env-forward=RUST_BACKTRACE` for the environment variable to have an effect
+error: Undefined Behavior: attempting deallocation using <32606> at alloc1902, but that tag does not exist in the borrow stack for this location
+  --> /source/src/lib.rs:76:13
+   |
+   = note: attempting deallocation using <32606> at alloc1902, but that tag does not exist in the borrow stack for this location
+   |
+   = help: this indicates a potential bug in the program: it performed an invalid operation, but the Stacked Borrows rules it violated are still experimental
+   = help: see https://github.com/rust-lang/unsafe-code-guidelines/blob/master/wip/stacked-borrows.md for further information
+help: <32606> was created by a SharedReadWrite retag at offsets [0x0..0xe0]
+  --> /harness/witness.rs:10:187
+   |
+10 | ...(||{b.realloc_with_default(2).unwrap();}));assert!(r.is_err());drop(b);DROPS.with(|d|assert!(d.borrow().iter().all(|&x|x<=1)));}
+   |                                                                   ^^^^^^^
+   = note: BACKTRACE (of the first span):
+   = note: inside `<aligned_box::AlignedBox<[T]> as std::ops::Drop>::drop` at /source/src/lib.rs:76:13: 76:63
+   = note: inside `std::ptr::drop_in_place::<aligned_box::AlignedBox<[T]>> - shim(Some(aligned_box::AlignedBox<[T]>))` at /toolchain/lib/rustlib/src/rust/library/core/src/ptr/mod.rs:523:1: 523:56
+   = note: inside `std::mem::drop::<aligned_box::AlignedBox<[T]>>` at /toolchain/lib/rustlib/src/rust/library/core/src/mem/mod.rs:940:24: 940:25
+note: inside `main`
+  --> /harness/witness.rs:10:187
+   |
+10 | ...(||{b.realloc_with_default(2).unwrap();}));assert!(r.is_err());drop(b);DROPS.with(|d|assert!(d.borrow().iter().all(|&x|x<=1)));}
+   |                                                                   ^^^^^^^
+
+note: some details are omitted, run with `MIRIFLAGS=-Zmiri-backtrace=full` for a verbose backtrace
+
+error: aborting due to 1 previous error
+

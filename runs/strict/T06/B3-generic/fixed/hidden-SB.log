@@ -1,0 +1,63 @@
+error[E0277]: `aligned_box::AlignedBox<u8>` doesn't implement `std::fmt::Debug`
+  --> /harness/hidden.rs:71:41
+   |
+71 |     let e = AlignedBox::<u8>::new(3, 1).unwrap_err();
+   |                                         ^^^^^^^^^^ `aligned_box::AlignedBox<u8>` cannot be formatted using `{:?}` because it doesn't implement `std::fmt::Debug`
+   |
+   = help: the trait `std::fmt::Debug` is not implemented for `aligned_box::AlignedBox<u8>`
+note: required by a bound in `std::result::Result::<T, E>::unwrap_err`
+  --> /toolchain/lib/rustlib/src/rust/library/core/src/result.rs:1198:5
+
+error[E0277]: `aligned_box::AlignedBox<[u8]>` doesn't implement `std::fmt::Debug`
+  --> /harness/hidden.rs:74:59
+   |
+74 |     let e = AlignedBox::<[u8]>::slice_from_value(3, 4, 9).unwrap_err();
+   |                                                           ^^^^^^^^^^ `aligned_box::AlignedBox<[u8]>` cannot be formatted using `{:?}` because it doesn't implement `std::fmt::Debug`
+   |
+   = help: the trait `std::fmt::Debug` is not implemented for `aligned_box::AlignedBox<[u8]>`
+note: required by a bound in `std::result::Result::<T, E>::unwrap_err`
+  --> /toolchain/lib/rustlib/src/rust/library/core/src/result.rs:1198:5
+
+error[E0277]: `aligned_box::AlignedBox<[u8]>` doesn't implement `std::fmt::Debug`
+  --> /harness/hidden.rs:77:58
+   |
+77 |     let e = AlignedBox::<[u8]>::slice_from_default(3, 4).unwrap_err();
+   |                                                          ^^^^^^^^^^ `aligned_box::AlignedBox<[u8]>` cannot be formatted using `{:?}` because it doesn't implement `std::fmt::Debug`
+   |
+   = help: the trait `std::fmt::Debug` is not implemented for `aligned_box::AlignedBox<[u8]>`
+note: required by a bound in `std::result::Result::<T, E>::unwrap_err`
+  --> /toolchain/lib/rustlib/src/rust/library/core/src/result.rs:1198:5
+
+error[E0277]: `aligned_box::AlignedBox<[u8]>` doesn't implement `std::fmt::Debug`
+  --> /harness/hidden.rs:80:59
+   |
+80 |     let e = AlignedBox::<[u8]>::slice_from_value(8, 0, 1).unwrap_err();
+   |                                                           ^^^^^^^^^^ `aligned_box::AlignedBox<[u8]>` cannot be formatted using `{:?}` because it doesn't implement `std::fmt::Debug`
+   |
+   = help: the trait `std::fmt::Debug` is not implemented for `aligned_box::AlignedBox<[u8]>`
+note: required by a bound in `std::result::Result::<T, E>::unwrap_err`
+  --> /toolchain/lib/rustlib/src/rust/library/core/src/result.rs:1198:5
+
+error[E0277]: `aligned_box::AlignedBox<[u8]>` doesn't implement `std::fmt::Debug`
+  --> /harness/hidden.rs:83:58
+   |
+83 |     let e = AlignedBox::<[u8]>::slice_from_default(8, 0).unwrap_err();
+   |                                                          ^^^^^^^^^^ `aligned_box::AlignedBox<[u8]>` cannot be formatted using `{:?}` because it doesn't implement `std::fmt::Debug`
+   |
+   = help: the trait `std::fmt::Debug` is not implemented for `aligned_box::AlignedBox<[u8]>`
+note: required by a bound in `std::result::Result::<T, E>::unwrap_err`
+  --> /toolchain/lib/rustlib/src/rust/library/core/src/result.rs:1198:5
+
+error[E0277]: `aligned_box::AlignedBox<()>` doesn't implement `std::fmt::Debug`
+  --> /harness/hidden.rs:86:42
+   |
+86 |     let e = AlignedBox::<()>::new(8, ()).unwrap_err();
+   |                                          ^^^^^^^^^^ `aligned_box::AlignedBox<()>` cannot be formatted using `{:?}` because it doesn't implement `std::fmt::Debug`
+   |
+   = help: the trait `std::fmt::Debug` is not implemented for `aligned_box::AlignedBox<()>`
+note: required by a bound in `std::result::Result::<T, E>::unwrap_err`
+  --> /toolchain/lib/rustlib/src/rust/library/core/src/result.rs:1198:5
+
+error: aborting due to 6 previous errors
+
+For more information about this error, try `rustc --explain E0277`.

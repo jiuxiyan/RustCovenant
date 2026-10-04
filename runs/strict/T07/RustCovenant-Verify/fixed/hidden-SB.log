@@ -1,0 +1,45 @@
+error[E0369]: binary operation `==` cannot be applied to type `std::result::Result<(), rtrb::PushError<Tracked>>`
+  --> /harness/hidden.rs:87:9
+   |
+87 |         assert_eq!(p.push(mk(id, &drops_log, &drop_counts, &bomb)), Ok(()));
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |         |
+   |         std::result::Result<(), rtrb::PushError<Tracked>>
+   |         std::result::Result<(), rtrb::PushError<Tracked>>
+   |
+note: an implementation of `std::cmp::PartialEq` might be missing for `Tracked`
+  --> /harness/hidden.rs:7:1
+   |
+7  | struct Tracked {
+   | ^^^^^^^^^^^^^^ must implement `std::cmp::PartialEq`
+   = note: this error originates in the macro `assert_eq` (in Nightly builds, run with -Z macro-backtrace for more info)
+help: consider annotating `Tracked` with `#[derive(PartialEq)]`
+   |
+7  + #[derive(PartialEq)]
+8  | struct Tracked {
+   |
+
+error[E0369]: binary operation `==` cannot be applied to type `std::result::Result<Tracked, rtrb::PopError>`
+  --> /harness/hidden.rs:98:5
+   |
+98 |     assert_eq!(c.pop(), Err(PopError::Empty));
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |     |
+   |     std::result::Result<Tracked, rtrb::PopError>
+   |     std::result::Result<Tracked, rtrb::PopError>
+   |
+note: an implementation of `std::cmp::PartialEq` might be missing for `Tracked`
+  --> /harness/hidden.rs:7:1
+   |
+7  | struct Tracked {
+   | ^^^^^^^^^^^^^^ must implement `std::cmp::PartialEq`
+   = note: this error originates in the macro `assert_eq` (in Nightly builds, run with -Z macro-backtrace for more info)
+help: consider annotating `Tracked` with `#[derive(PartialEq)]`
+   |
+7  + #[derive(PartialEq)]
+8  | struct Tracked {
+   |
+
+error: aborting due to 2 previous errors
+
+For more information about this error, try `rustc --explain E0369`.

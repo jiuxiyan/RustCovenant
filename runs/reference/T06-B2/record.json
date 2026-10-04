@@ -1,0 +1,113 @@
+{
+  "scope": "Unsigned review derivative; original signed records are archived separately. No signature over this derivative is claimed.",
+  "original_evidence_sha256": "7063ec8e71ff593d9359d7dc4fc2dda7fca7f1b3051f33b024f1405d93543dca",
+  "original_context_sha256": "7eb0209f7ede7d01526ef282d5c380d81f8935093fda375f6c88aaf36f882532",
+  "context": {
+    "source": {
+      ".cargo_vcs_info.json": "2ecd2ab3e5ace299730d9406109da91f2d1412318b7f3f651247dacc3078686f",
+      ".github/dependabot.yml": "3601fb4cf2188d77b81f3d03b5c8ac693dc70c55cfbc78e346b8543c667afb07",
+      ".github/workflows/ci.yml": "5617608de78c72f6d468e5c163318be2ea0980c108ab4380755f09979e2acfab",
+      ".gitignore": "2ebe6cb6f5289849dce5a8a6cdd77e06b1385302c862982f8e181c4782d19214",
+      "Cargo.toml": "aac6e857ab185cb0a09ec062ca06b66c4f7f8e6605415e3213b9ea99f90ca187",
+      "Cargo.toml.orig": "6c3e4d7cfbea18fb767b33700f89aae5b006d88f79e7ff4426d0226d1c9145ca",
+      "LICENSE": "0f8a050a74a615013ba350f792bbdd7a2087c24247b833095f349c228192430c",
+      "README.md": "31bfdac2288b831f09f43e033b755136d2707cca46fb77e2fb14d7705d43ce5b",
+      "src/lib.rs": "22b39b84322b3e6626cc0df82bef79e7e005efe73dd7ede472125faf1cece2b5"
+    },
+    "harness": {
+      "hidden.rs": "6d95f060d8f203e2ee23ed123d4eeee72b85e3d67d6640d06310c1b004b1af13",
+      "ordinary.rs": "daa59bc597be446ab1d0b0ec3eba154676fb498af321a23493582035c530f494",
+      "witness.rs": "e79f587f3332ef4ebbfc63449532041bf8a452f897dfbcee425e76b99d31ef96"
+    },
+    "models": [
+      "SB",
+      "TB"
+    ],
+    "timeout_s": 120,
+    "rust_commit": "287487624357c19b22d27aa3ed584b8ccd080b4d",
+    "leak_policy_by_suite": {
+      "witness": true,
+      "ordinary": false,
+      "hidden": true
+    },
+    "contract_sha256": "87969d9dbc86a2646879df84908bc73ddfc4f2caf622d9dc252a50fe66d0900e",
+    "miri_sha256": "f763a3b84abaa27db8cb0b4cdef8bec0daf1b0f1e72f9ae4dae63f84835acc57",
+    "bwrap_sha256": "85580dd52ed366ece8844e90fa75ac7c4de8802963071344e123221fb9f6f11e",
+    "evaluator_sha256": "895ccb55f247761e8afee9b33a7f0b32dfe3bfcb4d2c42f330db2bc0480ae455",
+    "metadata": {
+      "crate_name": "aligned_box",
+      "edition": "2021",
+      "lib_path": "src/lib.rs",
+      "features": [
+        "default",
+        "std"
+      ],
+      "package": "aligned_box",
+      "version": "0.3.0"
+    },
+    "sysroot_manifest_sha256": "4b42015c4e03e6aadfa96260c63190ea2916aa456833995aa59af0bd239bcb54"
+  },
+  "processes": {
+    "compile": {
+      "status": "PASS",
+      "returncode": 0,
+      "elapsed_s": 3.257,
+      "original_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "path_normalization_applied": false
+    },
+    "witness-SB": {
+      "status": "UB",
+      "returncode": 1,
+      "elapsed_s": 2.514,
+      "original_log_sha256": "3b66e9c5ba82cbaa53b111d8a55daef9de9b8be0f800a3e6ecb83883d4833338",
+      "log_sha256": "161408799084c16d70e536b2128d5db069def67c6676493818f086662cbb7e8d",
+      "path_normalization_applied": true
+    },
+    "witness-TB": {
+      "status": "PASS",
+      "returncode": 0,
+      "elapsed_s": 2.909,
+      "original_log_sha256": "e0de58fe02f039d8489ae289b95689325336861120b0ec49c31c57bedaba4961",
+      "log_sha256": "e0de58fe02f039d8489ae289b95689325336861120b0ec49c31c57bedaba4961",
+      "path_normalization_applied": false
+    },
+    "ordinary-SB": {
+      "status": "PASS",
+      "returncode": 0,
+      "elapsed_s": 3.123,
+      "original_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "path_normalization_applied": false
+    },
+    "ordinary-TB": {
+      "status": "PASS",
+      "returncode": 0,
+      "elapsed_s": 3.229,
+      "original_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "path_normalization_applied": false
+    },
+    "hidden-SB": {
+      "status": "UB",
+      "returncode": 1,
+      "elapsed_s": 2.755,
+      "original_log_sha256": "93da30dbecd5ea3799abf857df7c59e8e111f7dc8019d34264196eb1b0f26310",
+      "log_sha256": "1bd8fcb3ab88ab75e36c457e0ca878f5682151fdb0727020df67ae78146cc941",
+      "path_normalization_applied": true
+    },
+    "hidden-TB": {
+      "status": "PASS",
+      "returncode": 0,
+      "elapsed_s": 4.377,
+      "original_log_sha256": "6b4efe1a706939885ad7e7bee3b9afff1018cdc14763e7e656498acaad16bd41",
+      "log_sha256": "6b4efe1a706939885ad7e7bee3b9afff1018cdc14763e7e656498acaad16bd41",
+      "path_normalization_applied": false
+    }
+  },
+  "execution_flags": {
+    "complete": true,
+    "snapshot_unchanged": true,
+    "original_inputs_unchanged": true
+  }
+}

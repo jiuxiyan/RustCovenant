@@ -1,0 +1,56 @@
+
+thread 'main' panicked at /harness/hidden.rs:134:17:
+predicate panic
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+note: in Miri, you may have to set `MIRIFLAGS=-Zmiri-env-forward=RUST_BACKTRACE` for the environment variable to have an effect
+
+thread 'main' panicked at /harness/hidden.rs:31:13:
+injected destructor panic
+
+thread 'main' panicked at /harness/hidden.rs:177:9:
+assertion `left == right` failed: reachable element was already dropped
+  left: 1
+ right: 0
+error: Undefined Behavior: out-of-bounds pointer use: alloc30429 has been freed, so this pointer is dangling
+   --> /toolchain/lib/rustlib/src/rust/library/core/src/ptr/mod.rs:523:1
+    |
+    = note: out-of-bounds pointer use: alloc30429 has been freed, so this pointer is dangling
+    |
+    = help: this indicates a bug in the program: it performed an invalid operation, and caused Undefined Behavior
+    = help: see https://doc.rust-lang.org/nightly/reference/behavior-considered-undefined.html for further information
+help: alloc30429 was allocated here:
+   --> /harness/hidden.rs:18:22
+    |
+18  |             payload: format!("item{id}"),
+    |                      ^^^^^^^^^^^^^^^^^^^
+help: alloc30429 was deallocated here:
+   --> /harness/hidden.rs:165:9
+    |
+165 |         v.retain(|it| it.id != 1);
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^
+    = note: BACKTRACE (of the first span):
+    = note: inside `std::ptr::drop_in_place::<[u8]> - shim(None)` at /toolchain/lib/rustlib/src/rust/library/core/src/ptr/mod.rs:523:1: 523:56
+    = note: inside `<std::vec::Vec<u8> as std::ops::Drop>::drop` at /toolchain/lib/rustlib/src/rust/library/alloc/src/vec/mod.rs:3796:13: 3796:91
+    = note: inside `std::ptr::drop_in_place::<std::vec::Vec<u8>> - shim(Some(std::vec::Vec<u8>))` at /toolchain/lib/rustlib/src/rust/library/core/src/ptr/mod.rs:523:1: 523:56
+    = note: inside `std::ptr::drop_in_place::<std::string::String> - shim(Some(std::string::String))` at /toolchain/lib/rustlib/src/rust/library/core/src/ptr/mod.rs:523:1: 523:56
+    = note: inside `std::ptr::drop_in_place::<Item> - shim(Some(Item))` at /toolchain/lib/rustlib/src/rust/library/core/src/ptr/mod.rs:523:1: 523:56
+    = note: inside `std::mem::MaybeUninit::<Item>::assume_init_drop` at /toolchain/lib/rustlib/src/rust/library/core/src/mem/maybe_uninit.rs:719:18: 719:55
+    = note: inside `stack_collections::StackVec::<Item, 8>::drop_elements` at /source/src/stack_vec.rs:31:21: 31:44
+    = note: inside `<stack_collections::StackVec<Item, 8> as std::ops::Drop>::drop` at /source/src/stack_vec.rs:1184:9: 1184:30
+    = note: inside `std::ptr::drop_in_place::<stack_collections::StackVec<Item, 8>> - shim(Some(stack_collections::StackVec<Item, 8>))` at /toolchain/lib/rustlib/src/rust/library/core/src/ptr/mod.rs:523:1: 523:56
+note: inside `scenario_retain_drop_panic_safety`
+   --> /harness/hidden.rs:190:1
+    |
+190 | }
+    | ^
+note: inside `main`
+   --> /harness/hidden.rs:242:5
+    |
+242 |     scenario_retain_drop_panic_safety();
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    = note: this error originates in the macro `format` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+note: some details are omitted, run with `MIRIFLAGS=-Zmiri-backtrace=full` for a verbose backtrace
+
+error: aborting due to 1 previous error
+

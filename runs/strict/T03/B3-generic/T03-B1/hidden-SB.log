@@ -1,0 +1,23 @@
+
+thread 'main' panicked at /source/src/lib.rs:1075:13:
+`start` is 6, but capacity is 5 in `first_filled_slot_from`
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+note: in Miri, you may have to set `MIRIFLAGS=-Zmiri-env-forward=RUST_BACKTRACE` for the environment variable to have an effect
+
+thread 'main' panicked at /source/src/lib.rs:1464:9:
+assertion failed: a < self.core.cap()
+
+thread 'main' panicked at /source/src/lib.rs:350:13:
+`index (0) >= capacity (0)` in `StableVecFacade::insert`
+
+thread 'main' panicked at /source/src/lib.rs:416:13:
+`index (0) >= capacity (0)` in `StableVecFacade::remove`
+
+thread 'main' panicked at /source/src/lib.rs:1597:5:
+attempt to index StableVec with index 0, but no element exists at that index
+
+thread 'main' panicked at /harness/hidden.rs:56:13:
+controlled drop failure for 2
+
+thread 'main' panicked at /source/src/iter.rs:354:10:
+bug in StableVec iterator: no next filled slot

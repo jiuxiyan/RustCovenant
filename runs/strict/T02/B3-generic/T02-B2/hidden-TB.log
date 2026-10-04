@@ -1,0 +1,8 @@
+
+thread 'main' panicked at /harness/hidden.rs:181:23:
+The reference points to a value outside this slab
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+note: in Miri, you may have to set `MIRIFLAGS=-Zmiri-env-forward=RUST_BACKTRACE` for the environment variable to have an effect
+
+thread 'main' panicked at /source/src/lib.rs:784:9:
+assertion failed: key1 != key2

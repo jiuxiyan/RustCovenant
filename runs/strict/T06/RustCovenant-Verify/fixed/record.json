@@ -1,0 +1,78 @@
+{
+  "scope": "Unsigned review derivative; original signed records are archived separately. No signature over this derivative is claimed.",
+  "original_evidence_sha256": "4193340e4b3702e60f18527e0a1235f48274911e22a5fa860badf4da2f04d10b",
+  "original_context_sha256": "c4f579f0fbe2210e4895c780c38b9d3e6aedc6095db4888d8e0aed92b1009d1e",
+  "context": {
+    "source": {
+      ".cargo_vcs_info.json": "c3f9c3ae4ffb122b59c2b17a98865c2d9baaa7c71c66fda33236f54ed8f0a9bd",
+      ".github/dependabot.yml": "3601fb4cf2188d77b81f3d03b5c8ac693dc70c55cfbc78e346b8543c667afb07",
+      ".github/workflows/ci.yml": "afef5dec2eea93bb32f4d47bf22be2ce5b450aeb94315b31a3391ff302cb067d",
+      ".gitignore": "2ebe6cb6f5289849dce5a8a6cdd77e06b1385302c862982f8e181c4782d19214",
+      "Cargo.lock": "d9b9e2c4f1e2766b011ba45dfcf63140d574482ce25061ac8273606300c7f32c",
+      "Cargo.toml": "03ac7c7426b9c1c5dca6e2f7d99f7bdcfe9b0b5632d93d081f8b8e1232468459",
+      "Cargo.toml.orig": "475482953119d559f3a934401c188aad0c2a3a76a5d6f0efa6921a0b7bfd75c6",
+      "LICENSE": "eaf28ea0bf1d2bba7dcd9f1a3517b1d9444811d2b6fd4aa1279fbc16fd022527",
+      "README.md": "31bfdac2288b831f09f43e033b755136d2707cca46fb77e2fb14d7705d43ce5b",
+      "src/lib.rs": "bee5ed6e4e83f17a98673b83a205ea826fc175bbc2974aaf165f6c1203b66d67"
+    },
+    "harness": {
+      "hidden.rs": "2aa1058fd7cca1fc48a692e5f18360f17d9557978cf16fab12fea63fd1e26847"
+    },
+    "models": [
+      "SB",
+      "TB"
+    ],
+    "timeout_s": 120,
+    "rust_commit": "287487624357c19b22d27aa3ed584b8ccd080b4d",
+    "leak_policy_by_suite": {
+      "hidden": true
+    },
+    "contract_sha256": "87969d9dbc86a2646879df84908bc73ddfc4f2caf622d9dc252a50fe66d0900e",
+    "miri_sha256": "f763a3b84abaa27db8cb0b4cdef8bec0daf1b0f1e72f9ae4dae63f84835acc57",
+    "bwrap_sha256": "85580dd52ed366ece8844e90fa75ac7c4de8802963071344e123221fb9f6f11e",
+    "evaluator_sha256": "895ccb55f247761e8afee9b33a7f0b32dfe3bfcb4d2c42f330db2bc0480ae455",
+    "metadata": {
+      "crate_name": "aligned_box",
+      "edition": "2024",
+      "lib_path": "src/lib.rs",
+      "features": [
+        "default",
+        "std"
+      ],
+      "package": "aligned_box",
+      "version": "0.3.1"
+    },
+    "sysroot_manifest_sha256": "4b42015c4e03e6aadfa96260c63190ea2916aa456833995aa59af0bd239bcb54"
+  },
+  "processes": {
+    "compile": {
+      "status": "PASS",
+      "returncode": 0,
+      "elapsed_s": 4.16,
+      "original_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "path_normalization_applied": false
+    },
+    "hidden-SB": {
+      "status": "PASS",
+      "returncode": 0,
+      "elapsed_s": 3.44,
+      "original_log_sha256": "0ecdf95769ce68388e3c2fc14f067ea8da8847c049c0cec2235bd3d036a84067",
+      "log_sha256": "0ecdf95769ce68388e3c2fc14f067ea8da8847c049c0cec2235bd3d036a84067",
+      "path_normalization_applied": false
+    },
+    "hidden-TB": {
+      "status": "PASS",
+      "returncode": 0,
+      "elapsed_s": 3.064,
+      "original_log_sha256": "0ecdf95769ce68388e3c2fc14f067ea8da8847c049c0cec2235bd3d036a84067",
+      "log_sha256": "0ecdf95769ce68388e3c2fc14f067ea8da8847c049c0cec2235bd3d036a84067",
+      "path_normalization_applied": false
+    }
+  },
+  "execution_flags": {
+    "complete": true,
+    "snapshot_unchanged": true,
+    "original_inputs_unchanged": true
+  }
+}

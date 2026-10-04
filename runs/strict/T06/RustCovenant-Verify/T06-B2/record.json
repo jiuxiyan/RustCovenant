@@ -1,0 +1,77 @@
+{
+  "scope": "Unsigned review derivative; original signed records are archived separately. No signature over this derivative is claimed.",
+  "original_evidence_sha256": "c3c426da5b10f469482c21211b18521e2542194790ffd4430c4719f667bf2ef0",
+  "original_context_sha256": "566f3a1f1f999f3d921f5830d1fcfd487ae654bfc42379fdb849dfc2c646e3b3",
+  "context": {
+    "source": {
+      ".cargo_vcs_info.json": "2ecd2ab3e5ace299730d9406109da91f2d1412318b7f3f651247dacc3078686f",
+      ".github/dependabot.yml": "3601fb4cf2188d77b81f3d03b5c8ac693dc70c55cfbc78e346b8543c667afb07",
+      ".github/workflows/ci.yml": "5617608de78c72f6d468e5c163318be2ea0980c108ab4380755f09979e2acfab",
+      ".gitignore": "2ebe6cb6f5289849dce5a8a6cdd77e06b1385302c862982f8e181c4782d19214",
+      "Cargo.toml": "aac6e857ab185cb0a09ec062ca06b66c4f7f8e6605415e3213b9ea99f90ca187",
+      "Cargo.toml.orig": "6c3e4d7cfbea18fb767b33700f89aae5b006d88f79e7ff4426d0226d1c9145ca",
+      "LICENSE": "0f8a050a74a615013ba350f792bbdd7a2087c24247b833095f349c228192430c",
+      "README.md": "31bfdac2288b831f09f43e033b755136d2707cca46fb77e2fb14d7705d43ce5b",
+      "src/lib.rs": "22b39b84322b3e6626cc0df82bef79e7e005efe73dd7ede472125faf1cece2b5"
+    },
+    "harness": {
+      "hidden.rs": "2aa1058fd7cca1fc48a692e5f18360f17d9557978cf16fab12fea63fd1e26847"
+    },
+    "models": [
+      "SB",
+      "TB"
+    ],
+    "timeout_s": 120,
+    "rust_commit": "287487624357c19b22d27aa3ed584b8ccd080b4d",
+    "leak_policy_by_suite": {
+      "hidden": true
+    },
+    "contract_sha256": "87969d9dbc86a2646879df84908bc73ddfc4f2caf622d9dc252a50fe66d0900e",
+    "miri_sha256": "f763a3b84abaa27db8cb0b4cdef8bec0daf1b0f1e72f9ae4dae63f84835acc57",
+    "bwrap_sha256": "85580dd52ed366ece8844e90fa75ac7c4de8802963071344e123221fb9f6f11e",
+    "evaluator_sha256": "895ccb55f247761e8afee9b33a7f0b32dfe3bfcb4d2c42f330db2bc0480ae455",
+    "metadata": {
+      "crate_name": "aligned_box",
+      "edition": "2021",
+      "lib_path": "src/lib.rs",
+      "features": [
+        "default",
+        "std"
+      ],
+      "package": "aligned_box",
+      "version": "0.3.0"
+    },
+    "sysroot_manifest_sha256": "4b42015c4e03e6aadfa96260c63190ea2916aa456833995aa59af0bd239bcb54"
+  },
+  "processes": {
+    "compile": {
+      "status": "PASS",
+      "returncode": 0,
+      "elapsed_s": 4.361,
+      "original_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "path_normalization_applied": false
+    },
+    "hidden-SB": {
+      "status": "UB",
+      "returncode": 1,
+      "elapsed_s": 3.459,
+      "original_log_sha256": "935888f304f55f41b414acbd3eeb82b60a8dc63897210f65a8e8a64e1114ed7e",
+      "log_sha256": "85a7715e47505fbb3008d635940dc1343bd5d1d4d82f0a41e1cf1cbe6f6c2de6",
+      "path_normalization_applied": true
+    },
+    "hidden-TB": {
+      "status": "PASS",
+      "returncode": 0,
+      "elapsed_s": 3.109,
+      "original_log_sha256": "0ecdf95769ce68388e3c2fc14f067ea8da8847c049c0cec2235bd3d036a84067",
+      "log_sha256": "0ecdf95769ce68388e3c2fc14f067ea8da8847c049c0cec2235bd3d036a84067",
+      "path_normalization_applied": false
+    }
+  },
+  "execution_flags": {
+    "complete": true,
+    "snapshot_unchanged": true,
+    "original_inputs_unchanged": true
+  }
+}

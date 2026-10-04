@@ -1,0 +1,16 @@
+# Local files; archived execution logs must remain tracked.
+.DS_Store
+__pycache__/
+*.py[cod]
+/.venv/
+/.idea/
+/.vscode/
+/.trae/
+/.env
+/.env.*
+/target/
+/dist/
+
+# Generated protocol reports; run a copy outside the artifact to retain these.
+/supplements/protocol/protocol-results.csv
+/supplements/protocol/protocol-summary.json
