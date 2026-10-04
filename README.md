@@ -1,4 +1,4 @@
-# RustCovenant: artifact
+# RustCovenant
 
 This artifact accompanies a protected acceptance-protocol study. It contains all seven fixed tasks, fourteen existing candidates, two generated-test methods, the original strict policy, and a separately reported post-hoc response-format sensitivity analysis. See [REPRODUCIBILITY.md](REPRODUCIBILITY.md) for claim-to-file coverage, study design, and limitations.
 
